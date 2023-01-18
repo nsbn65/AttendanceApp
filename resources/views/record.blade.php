@@ -9,7 +9,7 @@
   </head>
   <body>
     @extends('layouts.layouts')
-    
+
     @section('header-list')
     <nav class = "header-nav">
       <ul>
@@ -36,7 +36,11 @@
           </tr>
 
           <tr>
-            <td>{{  }}</td>
+            <td>naoya</td>
+            <td>9:00</td>
+            <td>18:00</td>
+            <td>1:00</td>
+            <td>7:00</td>
           </tr>
         </table>
       </div>

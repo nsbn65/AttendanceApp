@@ -1,0 +1,15 @@
+ul {
+  margin-right: 15px;
+}
+
+.header-list {
+  display: inline-block;
+  margin-right: 50px;
+  padding-top: 12px;
+  font-weight: bold;
+}
+
+.header-list-ul {
+  text-decoration: none;
+  color: black;
+}
