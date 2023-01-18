@@ -1,0 +1,60 @@
+ul {
+  margin-right: 15px;
+}
+
+.header-list {
+  display:inline-block;
+  margin-right: 50px;
+  padding-top: 12px;
+  font-weight: bold;
+}
+
+.header-list-ul {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  height: 36.5rem;
+  background-color: rgb(237, 237, 237);
+  padding: 2%;
+}
+
+.greeting {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.btn-attendance {
+  display: flex;
+  text-align: center;
+  margin-top: 3%; 
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 69%;
+  height: 80%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 20px 5%;
+  height: 86%;
+  width: 420px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #ffffff;
+  border: none;
+}
+
+.txt {
+  font-size: 1.3rem;
+  font-weight: bold;
+}

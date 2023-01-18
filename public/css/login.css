@@ -1,0 +1,39 @@
+.container {
+  background-color: rgb(235, 235, 235);
+  height: 70%;
+  text-align: center;
+  padding-top: 8%;
+}
+
+.wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.mb-4 {
+  list-style: none;
+}
+
+.ttl-login {
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(50, 50, 50);
+  margin-top: 20px;
+}
+
+.input {
+  font-size: 13px;
+  padding: 8px 165px 8px 15px;
+  margin-bottom: 23px;
+}
+.btn-login {
+  padding: 8px 145px 8px 145px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background-color: blue;
+  border: none;
+  border-radius: 3px;
+}
+.btn-register {
+  text-decoration: none;
+}

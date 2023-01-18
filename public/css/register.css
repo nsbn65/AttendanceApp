@@ -1,0 +1,45 @@
+.container {
+  background-color: rgb(235, 235, 235);
+  height: 70%;
+  text-align: center;
+  padding-top: 8%;
+}
+
+.ttl-register {
+  color: rgb(50, 50, 50);
+  margin-top: -10px;
+}
+
+.errors {
+  color: red;
+  line-height: 30px;
+  list-style: none;
+}
+
+.wrapper {
+  text-align: center;
+  margin-top: 23px;
+}
+
+.input {
+  font-size: 13px;
+  padding: 8px 165px 8px 15px;
+  margin-bottom: 23px;
+}
+.btn-register{
+  padding: 8px 145px 8px 145px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background-color: blue;
+  border: none;
+  border-radius: 3px;
+}
+
+.text {
+  color: rgb(116, 116, 116);
+  margin-top: 30px;
+}
+
+.btn-login {
+  text-decoration: none;
+}
