@@ -15,7 +15,14 @@
       <ul>
         <li class = "header-list"><a class = "header-list-ul" href="/">ホーム</a></li>
         <li class = "header-list"><a class = "header-list-ul" href="/record">日付一覧</a></li>
-        <li class = "header-list"><a class = "header-list-ul" href="/logout">ログアウト</a></li>
+        <li class = "header-list">
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <a class = "header-list-ul" href="/logout" onclick="event.preventDefault();
+            this.closest('form').submit();">
+            {{ __('ログアウト') }}</a>
+          </form>
+        </li>
       </ul>
     </nav>
     @endsection

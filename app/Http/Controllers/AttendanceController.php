@@ -27,7 +27,7 @@ class AttendanceController extends Controller
             $oldAttendancePunchIn = new Carbon($oldAttendance->punchIn);
             $oldAttendanceDay = $oldAttendancePunchIn->startOfDay();
         }
-
+        
         $newAttendanceDay = Carbon::today();
 
         /**
@@ -50,7 +50,7 @@ class AttendanceController extends Controller
         $user = Auth::user();
         $attendance = Attendance::where('user_id', $user->id)->latest()->first();
 
-        if(!empty($timestamp->punchOut)) {
+        if(!empty($attendance->punchOut)) {
             return redirect()->back()->with('error', '既に退勤の打刻がされているか、出勤打刻されていません');
         }
         $attendance->update([
