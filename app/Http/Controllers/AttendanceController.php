@@ -22,9 +22,15 @@ class AttendanceController extends Controller
     public function punchIn()
     {
         $user = Auth::user();
-        
-        $start_time = Carbon::now();
-        //dd($start_time);
+        $attendance = new Attendance();
+        $attendance = Attendance::create([
+            'user_id' => $user->id,
+            'start_time' => date()->format("H:i:s"),
+        ]);
+
+        //
+        //$nowTime = format("H:i:s");
+        dd($attendance);
         return redirect('/');
     }
 
@@ -33,8 +39,9 @@ class AttendanceController extends Controller
     {
         $user = Auth::user();
         
-        $end_time = Carbon::now();
-        //dd($end_time);
+        $nowTime = new DateTime();
+        $nowTime = format("H:i:s");
+        //dd($nowTime);
         return redirect('/');
     }
 }
