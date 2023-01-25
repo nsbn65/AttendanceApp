@@ -30,6 +30,7 @@
     @section('content')
     <div class = "container">
       <p class = "greeting">{{ $user->name }}さんお疲れ様です！</p>
+      <p>{{session('message')}}</p>
       <div class = "btn-attendance">
         <form action="{{ route('punch/in') }}" method="POST">
           @csrf

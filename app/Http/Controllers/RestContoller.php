@@ -14,17 +14,28 @@ class RestContoller extends Controller
     {
         $user = Auth::user();
         
-        $start_rest_time = Carbon::now();
-        //dd($start_rest_time);
-        return redirect('/');
+        $oldtimein = Attendance::where('user_id',$user->id)->latest()->first();
+        if($oldtimein->start_time && !$oldtimein->end_time && !$oldtimein->start_rest_time) {
+            $oldtimein->update([
+                'start_rest_time' => Carbon::now(),
+            ]);
+            return redirect()->back();
+        }
+        return redirect()->back();
+
     }
 
     public function restOut()
     {
         $user = Auth::user();
         
-        $end_rest_time = Carbon::now();
-        //dd($end_rest_time);
-        return redirect('/');
+        $oldtimein = Attendance::where('user_id',$user->id)->latest()->first();
+        if($oldtimein->start_time && !$oldtimein->end_rest_time) {
+            $oldtimein->update([
+                'end_rest_time' => Carbon::now(),
+            ]);
+            return redirect()->back();
+        }
+        return redirect()->back();
     }
 }
