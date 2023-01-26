@@ -9,7 +9,7 @@ use App\Models\Attendance;
 use Illuminate\Support\Facades\Auth;
 
 
-class RestContoller extends Controller
+class RestController extends Controller
 {
     public function restIn()
     {
