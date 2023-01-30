@@ -15,11 +15,11 @@ class RestController extends Controller
     {
         $user = Auth::user();
         
-        $oldtimein = Rest::where('user_id',$user->id)->latest()->first();
+        $resttimein = Rest::latest()->first();
         
-        if(empty($oldtimein->start_rest_time)) 
+        if(empty($resttimein->start_rest_time)) 
         {
-            $oldtimein->create([
+            $resttimein->update([
                 'start_rest_time' => Carbon::now(),
             ]);
             return redirect()->back();
@@ -32,11 +32,11 @@ class RestController extends Controller
     {
         $user = Auth::user();
         
-        $oldtimein = Rest::where('user_id',$user->id)->latest()->first();
+        $resttimeout = Rest::latest()->first();
 
-        if(empty($oldtimein->end_rest_time)) 
+        if(empty($resttimeout->end_rest_time)) 
         {
-            $oldtimein->create([
+            $resttimeout->update([
                 'end_rest_time' => Carbon::now(),
             ]);
             return redirect()->back();
