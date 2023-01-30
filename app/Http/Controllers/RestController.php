@@ -19,12 +19,12 @@ class RestController extends Controller
         
         if(empty($resttimein->start_rest_time)) 
         {
-            $resttimein->update([
-                'start_rest_time' => Carbon::now(),
-            ]);
+            [
+                'start_rest_time' => date("H:i:s"),
+            ];
             return redirect()->back();
         }
-        return redirect()->back();
+        return redirect()->back()->with('message','休憩終了が押されていません');
 
     }
 
@@ -36,11 +36,11 @@ class RestController extends Controller
 
         if(empty($resttimeout->end_rest_time)) 
         {
-            $resttimeout->update([
-                'end_rest_time' => Carbon::now(),
-            ]);
+            [
+                'end_rest_time' => date("H:i:s"),
+            ];
             return redirect()->back();
         }
-        return redirect()->back();
+        return redirect()->back()->with('message','エラー');
     }
 }

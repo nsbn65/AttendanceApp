@@ -50,7 +50,7 @@ class AttendanceController extends Controller
         $time = attendance::create([
             'user_id' => $user->id,
             'user_name' =>$user->name,
-            'start_time' => Carbon::now(),
+            'end_time' => date("H:i:s"),
         ]);
         return redirect('/');
     }
@@ -68,9 +68,9 @@ class AttendanceController extends Controller
                 if($timeOut->start_rest_time && !$timeOut->end_rest_time) {
                     return redirect()->back()->with('message','休憩終了が打刻されていません');
                 }else{
-                    $timeOut->update([
-                        'end_time' => Carbon::now(),
-                    ]);
+                    [
+                        'end_time' => date("H:i:s"),
+                    ];
                     return redirect()->back()->with('message','お疲れ様でした!'); 
                 }
             }else{

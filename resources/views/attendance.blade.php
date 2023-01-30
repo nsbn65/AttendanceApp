@@ -34,25 +34,21 @@
       <div class = "btn-attendance">
         <form action="{{ route('punch/in') }}" method="POST">
           @csrf
-          @method('POST')
           <button type = submit class = "btn btn-punchin"><p class = "txt punchin">勤務開始</p></button>
         </form>
 
         <form action="{{ route('punch/out') }}" method="POST">
           @csrf
-          @method('POST')
           <button type = submit class = "btn btn-punchout"><p class = "txt punchout">勤務終了</p></button>
         </form>
         
         <form action="{{ route('rest/in') }}" method="POST">
           @csrf
-          @method('POST')
           <button type = submit class = "btn btn-restin"><p class = "txt restin">休憩開始</p></button>
         </form>
 
         <form action="{{ route('rest/out') }}" method="POST">
           @csrf
-          @method('POST')
           <button type = submit class = "btn btn-restout"><p class = "txt restout">休憩終了</p></button>
         </form>
       </div>
