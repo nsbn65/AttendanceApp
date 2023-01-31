@@ -12,7 +12,5 @@ class Rest extends Model
     protected $fillable = [
         'start_rest_time',
         'end_rest_time',
-        'created_at',
-        'updated_at',
     ];
 }
