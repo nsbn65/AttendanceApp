@@ -16,6 +16,6 @@ class RestsTableSeeder extends Seeder
      */
     public function run()
     {
-        Rest::factory()->count(30)->create();
+        \App\Models\Rest::factory()->count(30)->create();
     }
 }
