@@ -88,31 +88,5 @@ class AttendanceController extends Controller
         } else {
             return redirect()->back()->with('message','出勤打刻がされていません');
         }
-
-
-        if($timeOut) {
-            if(empty($timeOut->end_time)) {
-                if($timeOut->start_rest_time && !$timeOut->end_rest_time) {
-                    return redirect()->back()->with('message','休憩終了が打刻されていません');
-                }else{
-                    [
-                        'end_time' => date("H:i:s"),
-                    ];
-                    return redirect()->back()->with('message','お疲れ様でした!'); 
-                }
-            }else{
-                $today = new Carbon();
-                $day = $today->day;
-                $oldPunchOut = new Carbon();
-                $oldPunchOutDay = $oldPunchOut->day;
-                if ($day == $oldPunchOutDay) {
-                    return redirect()->back()->with('message','退勤済みです');
-                } else {
-                    return redirect()->back()->with('message','出勤打刻をしてください');
-                }
-            }
-        } else {
-            return redirect()->back()->with('message','出勤打刻がされていません');
-        }
     }
 }
