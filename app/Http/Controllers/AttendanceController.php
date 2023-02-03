@@ -47,6 +47,8 @@ class AttendanceController extends Controller
         if(($oldDay == $today)) {
             return redirect()->back()->with('message','退勤打刻済みです');
         }
+        $time = new Datetime();
+        $startTime = $time ->date();
 
         $time = attendance::create([
             'user_id' => $user->id,
