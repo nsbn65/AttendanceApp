@@ -47,13 +47,12 @@ class AttendanceController extends Controller
         if(($oldDay == $today)) {
             return redirect()->back()->with('message','退勤打刻済みです');
         }
-        $time = new Datetime();
-        $startTime = $time ->date();
-
+        $start_time = new DateTime();
+        
         $time = attendance::create([
             'user_id' => $user->id,
             
-            'start_time' => date("H:i:s"),
+            'start_time' => $start_time->format('H:i:s'),
         ]);
         return redirect('/');
     }
