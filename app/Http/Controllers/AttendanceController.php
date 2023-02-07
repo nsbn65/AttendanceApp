@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use DateTime;
 use App\Models\User;
 use App\Models\Attendance;
 use Illuminate\Support\Facades\Auth;
@@ -47,11 +48,10 @@ class AttendanceController extends Controller
         if(($oldDay == $today)) {
             return redirect()->back()->with('message','退勤打刻済みです');
         }
-        $start_time = new DateTime();
         
+        $start_time = new DateTime();
+
         $time = attendance::create([
-            'user_id' => $user->id,
-            
             'start_time' => $start_time->format('H:i:s'),
         ]);
         return redirect('/');
