@@ -36,11 +36,13 @@
           </tr>
 
           <tr>
+            @foreach($times as $time)
             <td>naoya</td>
-            <td>9:00</td>
-            <td>18:00</td>
-            <td>1:00</td>
-            <td>7:00</td>
+            <td>{{ $time->start_time }}</td>
+            <td>{{ $time->end_time }}</td>
+            <td>{{ $time->start_time }}</td>
+            <td>{{ $time->start_time }}</td>
+            @endforeach
           </tr>
         </table>
       </div>

@@ -50,8 +50,9 @@ class AttendanceController extends Controller
         }
         
         $start_time = new DateTime();
-
+        
         $time = attendance::create([
+            'user_id' => $user->id,
             'start_time' => $start_time->format('H:i:s'),
         ]);
         return redirect('/');
