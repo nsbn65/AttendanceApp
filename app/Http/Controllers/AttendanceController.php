@@ -23,7 +23,7 @@ class AttendanceController extends Controller
     public function punchIn()
     {
         $user = Auth::user();
-        //同じ日に2回出勤が押せない設定(もし打刻されていたらhomeに戻る)
+        //同じ日に2回出勤が押せない設定(打刻されていたらtopに戻る)
         $oldtimein = Attendance::where('user_id',$user->id)->latest()->first();
         $oldDay = '';
 
@@ -31,9 +31,9 @@ class AttendanceController extends Controller
         if($oldtimein) {
             $oldTimePunchIn = new 
             Carbon($oldtimein->start_time);
-            $oldDay = $oldTimePunchIn->startOfDay();//最後に登録したpunchInの時刻を00:00:00で代入
+            $oldDay = $oldTimePunchIn->startOfDay();
         }
-        $today = Carbon::today();//当日の日時を00:00:00で代入
+        $today = Carbon::today();
 
         if(($oldDay == $today) && (empty($oldtimein->end_time))) {
             return redirect()->back()->with('message','出勤打刻済みです');
@@ -45,6 +45,8 @@ class AttendanceController extends Controller
             $oldDay = $oldTimePunchOut->startOfDay();//最後に登録したpunchInの時刻を00:00:00で代入
         }
 
+        dd($oldtimein);
+        
         if(($oldDay == $today)) {
             return redirect()->back()->with('message','退勤打刻済みです');
         }
@@ -55,6 +57,7 @@ class AttendanceController extends Controller
             'user_id' => $user->id,
             'start_time' => $start_time->format('H:i:s'),
         ]);
+        
         return redirect('/');
     }
 
